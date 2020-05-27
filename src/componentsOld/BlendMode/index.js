@@ -8,10 +8,8 @@ const StyledBlendMode = styled.svg`
 	display: flex;
 	width: 100%;
 	height: 100%;
-	background: #000;
-	/* background: #0000ff; */
+	background: white;
 	filter: blur(5px) contrast(100);
-	/* filter: blur(5px) grayScale(0.8) contrast(100); */
 `;
 const StyledBlobs = styled.svg`
 	display: flex;

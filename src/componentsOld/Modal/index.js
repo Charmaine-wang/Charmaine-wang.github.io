@@ -1,40 +1,38 @@
-
-import React from "react";
-import styled from "styled-components";
-
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledModal = styled.div`
-  display: ${props => (props.isActive ? "flex" : "none")};
-  width: 90vw;
-  height: 90vh;
-  transform: translateX(5.5%);
-  position: fixed;
-  z-index: 2;
-  top: 5%;
-  flex-direction: column;
-  background: #0000FF;
-  animation: fade-in 0.2s ease-in-out;
+	display: ${(props) => (props.isActive ? 'flex' : 'none')};
+	width: 90vw;
+	height: 90vh;
+	transform: translateX(5.5%);
+	position: fixed;
+	z-index: 2;
+	top: 5%;
+	flex-direction: column;
+	background: #0000ff;
+	animation: fade-in 0.2s ease-in-out;
 
-    h2 {
-      font-size: 96px;
-      margin: 0;
-      color:#fff;
-    }
+	h2 {
+		font-size: 96px;
+		margin: 0;
+		color: #fff;
+	}
 
-    p {
-      font-size: 46px;
-      margin: 0;
-      color:#fff;
-    }
+	p {
+		font-size: 46px;
+		margin: 0;
+		color: #fff;
+	}
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 `;
 
 // const StyledSecondtSection = styled.section`
@@ -58,12 +56,14 @@ const StyledModal = styled.div`
 //         color: #fff;
 //       }
 // `;
-const Modal = props => {
-    return (
-        <StyledModal {...props}>
-          {/* <h2>About</h2> */}
-          <p>My name is Charmaine. I'm a second year web development student at Yrgo Gothenburg, Sweden.</p>
-        {/* <StyledSecondtSection>
+const Modal = (props) => {
+	return (
+		<StyledModal {...props}>
+			{/* <h2>About</h2> */}
+			<p>
+				My name is Charmaine. Web developer studying at Yrgo Gothenburg, Sweden.
+			</p>
+			{/* <StyledSecondtSection>
           <div>
             <a href="https://github.com/Charmaine-wang/SGN-frontend"><h1>Sgn.</h1></a>
             <a href="https://github.com/Charmaine-wang/workout"><h1>Workout.</h1></a>
@@ -76,8 +76,7 @@ const Modal = props => {
             <a href="https://github.com/Charmaine-wang/klearning"><h1>Kultur Akademin.</h1></a>
           </div>
         </StyledSecondtSection> */}
-
-        </StyledModal>
-    );
+		</StyledModal>
+	);
 };
 export default Modal;

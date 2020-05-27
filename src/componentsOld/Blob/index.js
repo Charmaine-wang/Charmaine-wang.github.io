@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TweenLite } from 'gsap';
+import { TweenLite } from 'gsap/dist/gsap';
 
 import styled from 'styled-components';
 
@@ -32,7 +32,7 @@ const Blob = (props) => {
 			cx={getRandomIntBetween(0, window.innerWidth / 2)}
 			cy={getRandomIntBetween(0, window.innerHeight / 2)}
 			r={getRandomIntBetween(25, 100)}
-			fill="#fff"
+			fill="black"
 		/>
 	);
 };
