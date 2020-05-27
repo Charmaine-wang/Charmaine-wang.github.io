@@ -31,7 +31,6 @@ const StyledButton = styled.div`
 	cursor: url('images/pointer.png'), 30 30, pointer;
 
 	h5 {
-		background-color: red;
 		font-size: 28px;
 		padding: 2px 4px;
 		margin: 0;
