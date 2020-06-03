@@ -5,26 +5,41 @@ import styled from 'styled-components';
 const StyledFrontSection = styled.section`
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	height: 90vh;
+	height: 100vh;
 	width: 100vw;
 	margin-bottom: 0;
-	scroll-snap-align: start;
 	position: relative;
+	overflow: hidden;
+
+	@media (min-width: 1024px) {
+		height: calc(100vh - 100px);
+	}
+
 	h1 {
+		text-align: center;
 		mix-blend-mode: difference;
 		position: absolute;
 		top: 100px;
 		color: #fff;
 		z-index: 111;
-		font-size: 126px;
-		line-height: 98px;
-		display: ${(props) => (props.isActive ? 'none' : 'block')};
+		padding: 0 50px;
+		font-size: 66px;
+		display: inline-block;
+		white-space: pre-line;
+		line-height: 68px;
+
+		@media (min-width: 768px) {
+			font-size: 86px;
+		}
+
+		@media (min-width: 1024px) {
+			font-size: 126px;
+			align-self: center;
+		}
 	}
 `;
 
 const FrontSection = (props) => {
-	// const [isClicked, setClicked] = useState(false);
 	return (
 		<StyledFrontSection {...props}>
 			<h1>Charmaine Wang</h1>

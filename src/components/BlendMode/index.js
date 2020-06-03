@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TweenMax, TweenLite } from 'gsap';
+import { TweenMax, TweenLite } from 'gsap/dist/gsap';
 import Blob from '../Blob';
 
 import styled from 'styled-components';

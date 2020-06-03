@@ -12,6 +12,9 @@ const StyledAbout = styled.div`
 	transform: ${(props) =>
 		props.isActive ? 'translate(0, 0)' : 'translate(700px, 0)'};
 	transition: 0.3s ease-in-out;
+	@media (max-width: 576px) {
+		width: 100vw;
+	}
 `;
 const StyledWrapper = styled.div`
 	position: relative;
@@ -23,9 +26,16 @@ const StyledWrapper = styled.div`
 	width: 100%;
 	padding: 50px;
 
+	@media (max-width: 576px) {
+		padding: 25px;
+	}
 	h1 {
 		font-size: 38px;
 		line-height: 36px;
+		@media (max-width: 576px) {
+			font-size: 26px;
+			line-height: 26px;
+		}
 	}
 `;
 const StyledWrapperForProjects = styled.div`
@@ -41,17 +51,39 @@ const StyledWrapperForProjects = styled.div`
 	}
 `;
 
-const StyledLine = styled.div``;
+const StyledContactMobile = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	> p {
+		font-size: 12px;
+	}
+
+	> a {
+		text-decoration: none;
+		color: #000;
+		font-size: 12px;
+		font-weight: 700;
+	}
+
+	> a:first-of-type {
+		margin-top: 10px;
+	}
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
 
 const About = (props) => {
 	return (
 		<StyledAbout {...props}>
 			<StyledWrapper>
 				<h1>
-					Graduated web developer looking forward to a rewarding career whitin
-					web development. I've got a coprehensive knowledge and interest in
-					design and developing the layout, visual apperance and responsive
-					usability of the website.
+					Web developer looking forward to a rewarding career whitin web
+					development. I've got a coprehensive knowledge and interest in design
+					and developing the layout, visual apperance and responsive usability
+					for the web.
 				</h1>
 				<StyledWrapperForProjects>
 					<h5>School projects</h5>
@@ -61,7 +93,6 @@ const About = (props) => {
 							href="https://github.com/Charmaine-wang/Fuzzy-memory"
 						>
 							<h1>Fuzzy Memory.</h1>
-							<StyledLine className="line" />
 						</a>
 						<a
 							className="linkToProject"
@@ -101,6 +132,16 @@ const About = (props) => {
 						</a>
 					</div>
 				</StyledWrapperForProjects>
+				<StyledContactMobile>
+					<p>mail: charmainewang424@hotmail.com</p>
+					<p>tel: 0739656610</p>
+					<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
+						GitHub
+					</a>
+					<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
+						LinkedIn
+					</a>
+				</StyledContactMobile>
 			</StyledWrapper>
 		</StyledAbout>
 	);

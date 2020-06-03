@@ -12,8 +12,19 @@ const StyledTop = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 50px;
+	@media (max-width: 768px) {
+		display: none;
+	}
+
 	> p {
+		transition: 0.2s ease-in-out;
 		font-size: 10px;
+		transform: ${(props) =>
+			props.hoverEffect ? 'translate(-70px, 0)' : 'translate(0, 0)'};
+	}
+
+	@media (min-width: 1024px) {
+		height: 50px;
 	}
 `;
 const StyledRight = styled.div`
@@ -28,7 +39,6 @@ const StyledRight = styled.div`
 		props.hoverEffect ? 'translate(380px, 0)' : 'translate(450px, 0)'};
 
 	transition: 0.2s ease-in-out;
-	/* justify-content: center; */
 	align-items: space-between;
 	padding: 50px 0;
 	> a {
@@ -36,6 +46,11 @@ const StyledRight = styled.div`
 		font-size: 10px;
 		color: black;
 		text-decoration: none;
+	}
+
+	width: 500px;
+	@media (max-width: 768px) {
+		display: none;
 	}
 `;
 const StyledBottom = styled.div`
@@ -53,6 +68,10 @@ const StyledBottom = styled.div`
 		font-size: 10px;
 		color: black;
 		text-decoration: none;
+	}
+
+	@media (max-width: 768px) {
+		display: none;
 	}
 `;
 const StyledLeft = styled.div`
@@ -72,12 +91,16 @@ const StyledLeft = styled.div`
 		font-size: 10px;
 		white-space: pre;
 	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const Frame = (props) => {
 	return (
 		<>
-			<StyledTop>
+			<StyledTop {...props}>
 				<p></p>
 				<p>mail: charmainewang424@hotmail.com</p>
 			</StyledTop>
@@ -88,6 +111,7 @@ const Frame = (props) => {
 				<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
 					GitHub
 				</a>
+
 				<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
 					LinkedIn
 				</a>

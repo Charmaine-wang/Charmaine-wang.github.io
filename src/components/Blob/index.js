@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { TweenLite } from 'gsap';
+import React, { useEffect, useRef, useMemo } from 'react';
+import { TweenLite } from 'gsap/dist/gsap';
 
 import styled from 'styled-components';
 
@@ -14,9 +14,11 @@ const Blob = (props) => {
 		moveMe(circle.current);
 	}, []);
 
-	const getRandomIntBetween = (from, to) => {
-		return Math.floor(Math.random() * (to + 1 - from)) + from;
-	};
+	const useRandomInt = (from, to) =>
+		useMemo(() => Math.floor(Math.random() * (to + 1 - from)) + from, [
+			from,
+			to,
+		]);
 
 	const moveMe = (target) => {
 		TweenLite.to(target, Math.random() * 6, {
@@ -26,12 +28,14 @@ const Blob = (props) => {
 			onCompleteParams: [target],
 		});
 	};
+
+	// moveMe(circle.current);
 	return (
 		<StyledCircle
 			ref={circle}
-			cx={getRandomIntBetween(0, window.innerWidth / 2)}
-			cy={getRandomIntBetween(0, window.innerHeight / 2)}
-			r={getRandomIntBetween(25, 100)}
+			cx={useRandomInt(0, window.innerWidth / 2)}
+			cy={useRandomInt(0, window.innerHeight / 2)}
+			r={useRandomInt(25, 100)}
 			fill="#fff"
 		/>
 	);
