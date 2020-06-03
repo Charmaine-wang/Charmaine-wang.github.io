@@ -15,6 +15,11 @@ const StyledAbout = styled.div`
 	@media (max-width: 576px) {
 		width: 100vw;
 	}
+	@media (max-width: 768px) {
+		width: 100%;
+		transform: ${(props) =>
+			props.isActive ? 'translate(0, 0)' : 'translate(100%, 0)'};
+	}
 `;
 const StyledWrapper = styled.div`
 	position: relative;
@@ -53,13 +58,19 @@ const StyledWrapperForProjects = styled.div`
 
 const StyledContactMobile = styled.div`
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: space-between;
 
-	> p {
+	> div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	> div > p {
 		font-size: 12px;
 	}
 
-	> a {
+	> div > a {
 		text-decoration: none;
 		color: #000;
 		font-size: 12px;
@@ -133,14 +144,18 @@ const About = (props) => {
 					</div>
 				</StyledWrapperForProjects>
 				<StyledContactMobile>
-					<p>mail: charmainewang424@hotmail.com</p>
-					<p>tel: 0739656610</p>
-					<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
-						GitHub
-					</a>
-					<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
-						LinkedIn
-					</a>
+					<div>
+						<p>mail: charmainewang424@hotmail.com</p>
+						<p>tel: 0739656610</p>
+					</div>
+					<div>
+						<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
+							GitHub
+						</a>
+						<a href="https://www.linkedin.com/in/charmaine-wang-82517a17b/">
+							LinkedIn
+						</a>
+					</div>
 				</StyledContactMobile>
 			</StyledWrapper>
 		</StyledAbout>
