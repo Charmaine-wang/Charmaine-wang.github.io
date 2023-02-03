@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledAbout = styled.div`
@@ -45,6 +45,7 @@ const StyledWrapper = styled.div`
 		}
 	}
 `;
+
 const StyledWrapperForProjects = styled.div`
 	display: flex;
 	flex-direction: column;
