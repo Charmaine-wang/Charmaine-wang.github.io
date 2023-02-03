@@ -11,7 +11,7 @@ const StyledFrontSection = styled.section`
 	position: relative;
 	overflow: hidden;
 
-	@media (min-width: 1024px) {
+	@media (min-width: 768px) {
 		height: calc(100vh - 100px);
 	}
 

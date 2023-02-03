@@ -5,10 +5,11 @@ const StyledAbout = styled.div`
 	right: 0;
 	z-index: 999;
 	position: fixed;
-	display: flex;
+	display: inline-flex;
 	background-color: #fff;
 	height: 100vh;
 	width: 700px;
+	overflow: hidden;
 	transform: ${(props) =>
 		props.isActive ? 'translate(0, 0)' : 'translate(700px, 0)'};
 	transition: 0.3s ease-in-out;
@@ -30,7 +31,8 @@ const StyledWrapper = styled.div`
 	height: 100%;
 	width: 100%;
 	padding: 50px;
-
+	overflow: hidden;
+	justify-content: space-between;
 	@media (max-width: 576px) {
 		padding: 25px;
 	}
@@ -46,9 +48,12 @@ const StyledWrapper = styled.div`
 const StyledWrapperForProjects = styled.div`
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 	width: 100%;
 	padding: 50px;
+
+	@media (max-width: 576px) {
+		padding: 0 50px 100px;
+	}
 
 	> div > .linkToProject {
 		text-decoration: none;
@@ -90,12 +95,6 @@ const About = (props) => {
 	return (
 		<StyledAbout {...props}>
 			<StyledWrapper>
-				<h1>
-					Web developer looking forward to a rewarding career whitin web
-					development. I've got a coprehensive knowledge and interest in design
-					and developing the layout, visual apperance and responsive usability
-					for the web.
-				</h1>
 				<StyledWrapperForProjects>
 					<h5>School projects</h5>
 					<div>
@@ -123,10 +122,7 @@ const About = (props) => {
 						>
 							<h1>Sgn.</h1>
 						</a>
-						<a
-							className="linkToProject"
-							href="https://github.com/Charmaine-wang/gameover"
-						>
+						<a className="linkToProject" href="https://2lang.netlify.app/">
 							<h1>Game Over.</h1>
 						</a>
 						<a

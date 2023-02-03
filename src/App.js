@@ -8,10 +8,7 @@ import './App.css';
 import styled from 'styled-components';
 
 const StyledApp = styled.div`
-	/* scroll-snap-type: mandatory;
-	scroll-snap-points-y: repeat(100vh);
-	scroll-snap-type: y mandatory;
-	overflow-x: hidden; */
+	overflow: hidden;
 `;
 
 const StyledButton = styled.div`
@@ -28,6 +25,10 @@ const StyledButton = styled.div`
 	align-items: center;
 	cursor: url('images/pointer.png'), 30 30, pointer;
 	mix-blend-mode: difference;
+
+	@media (min-width: 1024px) {
+		transform: translate(-50px, -47vh) rotate(90deg);
+	}
 `;
 
 const StyledMenu = styled.div`
@@ -89,6 +90,8 @@ const StyledTextMenu = styled.div`
 
 const StyledSections = styled.div`
 	padding: 0;
+	overflow: hidden;
+	height: 100%;
 
 	@media (min-width: 768px) {
 		padding: 50px 0;
